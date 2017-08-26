@@ -10,7 +10,7 @@ import { DataService } from './services/data.service';
 
 import { MaterialModule } from '@angular/material';
 import { MasonryModule } from 'angular2-masonry';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -24,7 +24,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
     MaterialModule,
     MasonryModule,
     BrowserAnimationsModule
-    
   ],
   providers: [DataService],
   bootstrap: [AppComponent]

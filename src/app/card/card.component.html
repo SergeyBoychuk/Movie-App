@@ -18,9 +18,12 @@
     <div *ngIf="image.poster_path" class="card-block col-xs-12 col-sm-4 col-md-3">
         <div class="card-inner">
           <img class="img-responsive" src="https://image.tmdb.org/t/p/w300{{image.poster_path}}">
-          
+          <span class="vote-rating">User Rating <b>{{image.vote_average}}</b> / 10 </span>
+          <div class="release-date">{{image.release_date}}</div>
         </div>
+        
         <h3>{{image.title}}</h3>
+        
     </div>
   </ng-container>
 </div>

@@ -1,24 +1,30 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import { Component, OnInit, NgModule, ViewChild } from '@angular/core';
 import { DataService } from '../services/data.service';
 
 
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
-  styleUrls: ['./card.component.css'],
+  styleUrls: ['./card.component.scss'],
   providers: [DataService]
 })
 export class CardComponent implements OnInit {
   images: any[];
   imagesFound: boolean = false;
   showMatches = false;
+  stars: number;
+
+
+
+  title= ' app works';
 
   handleSuccess(data) {
     this.imagesFound = true;
     this.images = data.results;
     console.log(data.results);
-
   }
+
+
 
 
   handleError(error) {
@@ -30,6 +36,7 @@ export class CardComponent implements OnInit {
   constructor(private dataService: DataService) { 
     
   }
+
 
   searchImages(query:string ) {
       return this.dataService.getImage(query).subscribe(
