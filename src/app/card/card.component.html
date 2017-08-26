@@ -1,12 +1,14 @@
 <header>
-  <h1>Find Cool Movie Listings</h1>
+  <h1>Movie Listings</h1>
 </header>
 
 <div class="form-wrapper">
-  <div class="form-group text-center">
-    <input class="search-field form-control" [(ngModel)]="searchQuery" id="titleInput" placeholder="Movie Name" type="text">
-    <button class="btn btn-primary" (click)="searchImages(searchQuery)">Search</button>
-  </div>
+  
+    <div class="form-group text-center">
+      <input class="search-field form-control" [(ngModel)]="searchQuery" (keyup.enter)="searchImages(searchQuery)"id="titleInput" placeholder="Movie Name" type="text">
+      <button class="btn btn-primary" (click)="searchImages(searchQuery)">Search</button>
+    </div>
+  
 </div>
 
 <p *ngIf="searching">Fetching Data</p>

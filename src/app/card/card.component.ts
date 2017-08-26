@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, NgModule } from '@angular/core';
 import { DataService } from '../services/data.service';
 
 
@@ -11,7 +11,7 @@ import { DataService } from '../services/data.service';
 export class CardComponent implements OnInit {
   images: any[];
   imagesFound: boolean = false;
-  
+  showMatches = false;
 
   handleSuccess(data) {
     this.imagesFound = true;
@@ -20,10 +20,10 @@ export class CardComponent implements OnInit {
 
   }
 
+
   handleError(error) {
     console.log(error);
   }
-
 
 
 
@@ -34,8 +34,10 @@ export class CardComponent implements OnInit {
   searchImages(query:string ) {
       return this.dataService.getImage(query).subscribe(
         data => this.handleSuccess(data),
-        error => this.handleError(error)
-      )
+        error => this.handleError(error),
+        
+      ),
+      this.showMatches = false  
   }
   ngOnInit() {
     

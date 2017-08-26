@@ -8,6 +8,10 @@ import { AppComponent } from './app.component';
 import { CardComponent } from './card/card.component';
 import { DataService } from './services/data.service';
 
+import { MaterialModule } from '@angular/material';
+import { MasonryModule } from 'angular2-masonry';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +21,9 @@ import { DataService } from './services/data.service';
     BrowserModule,
     FormsModule,
     HttpModule,
+    MaterialModule,
+    MasonryModule,
+    BrowserAnimationsModule
     
   ],
   providers: [DataService],
