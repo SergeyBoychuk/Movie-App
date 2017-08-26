@@ -1,0 +1,25 @@
+<header>
+  <h1>Find Cool Movie Listings</h1>
+</header>
+
+<div class="form-wrapper">
+  <div class="form-group text-center">
+    <input class="search-field form-control" [(ngModel)]="searchQuery" id="titleInput" placeholder="Movie Name" type="text">
+    <button class="btn btn-primary" (click)="searchImages(searchQuery)">Search</button>
+  </div>
+</div>
+
+<p *ngIf="searching">Fetching Data</p>
+
+<div class="container">
+  <ng-container *ngFor="let image of images">
+    <div *ngIf="image.poster_path" class="card-block col-xs-12 col-sm-4 col-md-3">
+        <div class="card-inner">
+          <img class="img-responsive" src="https://image.tmdb.org/t/p/w300{{image.poster_path}}">
+          
+        </div>
+        <h3>{{image.title}}</h3>
+    </div>
+  </ng-container>
+</div>
+
