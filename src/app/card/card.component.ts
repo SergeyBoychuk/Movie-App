@@ -13,7 +13,7 @@ export class CardComponent implements OnInit {
   imagesFound: boolean = false;
   showMatches = false;
   stars: number;
-
+  searchQuery: string;
 
 
   title= ' app works';
@@ -21,7 +21,6 @@ export class CardComponent implements OnInit {
   handleSuccess(data) {
     this.imagesFound = true;
     this.images = data.results;
-    console.log(data.results);
   }
 
 
